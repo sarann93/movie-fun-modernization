@@ -5,9 +5,7 @@
     The ASF licenses this file to You under the Apache License, Version 2.0
     (the "License"); you may not use this file except in compliance with
     the License.  You may obtain a copy of the License at
-
        http://www.apache.org/licenses/LICENSE-2.0
-
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,6 +16,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <c:set var="language" value="${pageContext.request.locale}"/>
 <fmt:setLocale value="${language}"/>
 
@@ -74,6 +73,7 @@
   <form class="movie-input-form form-inline" action="moviefun"
         method="post">
     <p>Add Movie</p>
+    <sec:csrfInput />
     <input type="text" name="title" placeholder="Title" size="29"/> <input
       type="text" name="director" placeholder="Director" size="17"/> <input
       type="text" name="genre" placeholder="Genre" size="14"/> <input
